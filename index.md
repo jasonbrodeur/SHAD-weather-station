@@ -1,15 +1,15 @@
 ---
 layout: home
 title: Home
-description: SHAD Crowdsourcing and Digital Mapping
+description: SHAD - Build your own weather station
 nav_order: 1
 ---
 
-# Welcome to your SHAD Crowdsourcing and Digital Mapping workshop
+# Welcome to your SHAD "Build your own weather station" workshop
 
-SHORTLINK TO THIS SITE: [bit.ly/shad-mapping-exercise](https://bit.ly/shad-mapping-exercise).
+SHORTLINK TO THIS SITE: [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station).
 
-Hello! During today's workshop, you'll work with your fellow SHADs to gather, synthesize, and spatially analyze data that will help answer the question: ***Which areas of McMaster’s outdoors spaces are most ‘livable’ for students?*** Throughout today, we'll explore this question and its connection to the concepts of sustainability, while building data collection and digital mapping skills.
+In today's workshop, you will work in small groups to construct simple circuits into a working weather station. You will learn how to use microcontrollers and connect them to electronic components to measure atmospheric variables (temperature, humidity, light intensity, etc.), output them to your computer screen, and trigger other actions based on their values. You'll also learn some of the basics of temperature measurements, and you'll get a chance to put your building skills to the test by creating an enclosure for your weather station.  
 
 ## Learning objectives
 By the end of today's workshop, you should be able to: 
@@ -22,15 +22,16 @@ By the end of today's workshop, you should be able to:
 
 |Time|Activity|
 |:---|:---|
-|9:30 - 9:40|Welcome|
-|9:40 - 10:00|Intro: Livability & sustainability|
-|10:00 - 10:20|Field work preparation|
-|10:20 - 11:20|Field work|
-|11:20 - 11:50|Data entry and cleanup|
+|9:30 - 9:50|Welcome & intro to simple circuits|
+|9:50 - 10:00|Equipment setup and connection|
+|10:00 - 11:00|Basic circuits and programs|
+|11:00 - 11:45|Testing weather station components|
 |11:50 - 13:00|**LUNCH**|
-|13:00 - 13:30|GIS & digital mapping basics|
-|13:30 - 14:30|Making your first map|
-|14:40 - 15:40|Mapping our data|
+|13:00 - 13:30|Basics of measuring temperature|
+|13:30 - 14:15|Building a prototype|
+|14:25 - 15:00|Building an enclosure|
+|15:00 - 15:20|Testing our weather station|
+|15:20 - 15:40|Final discussion and wrap-up|
 
 ## Today's slides
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTFig4nUsKsC4GbYZ-jYRo8R4eFkUjds3dTgW-hZzZ36Rh1rZ9z7Sl7xscwjJm0tCFl7pduV6Z7vymP/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
