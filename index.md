@@ -43,6 +43,8 @@ By the end of today's workshop, you should be able to:
 - Have fun and don't worry about making a mistake. 
 - Put up your hand when you're stuck.
 
+## Intro slides
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTr5fewdPoITzPgJG1DJz8dG1b21U0H-AqpDsJfyXLfUZyD1vDFhZ-eoaE7n0ztoKiEOmRNkmR2hKf_/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 ---
 
 **Before we begin**, follow the instructions on the [preparation](preparation) page.
