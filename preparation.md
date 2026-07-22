@@ -30,6 +30,8 @@ One of our sensors (the DHT11 temperature and humidity sensor) requires addition
 3. Search for "DHT Sensor Library" and click to install the *DHT sensor library by Adafruit*. If prompted to also install the *Adafruit Unified Sensor* library, choose to `INSTALL ALL`. 
 <img width="800" alt="Installing Adafruit DHT Library" src="assets/img/install-dht-library.png" />
 <img width="400" alt="Installing Adafruit Unified Sensor Library" src="assets/img/install-all.png" />
-4. If you were not prompted to install the *Adafruit Unified Sensor* library in the previous step, search for and install it. 
+4. If you were not prompted to install the *Adafruit Unified Sensor* library in the previous step, search for and install it.
+   
+---
 
 **All done?** Move on to [part one](part-one).
