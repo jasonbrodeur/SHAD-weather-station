@@ -9,29 +9,39 @@ nav_order: 1
 
 SHORTLINK TO THIS SITE: [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station).
 
-In today's workshop, you will work in small groups to construct simple circuits into a working weather station. You will learn how to use microcontrollers and connect them to electronic components to measure atmospheric variables (temperature, humidity, light intensity, etc.), output them to your computer screen, and trigger other actions based on their values. You'll also learn some of the basics of temperature measurements, and you'll get a chance to put your building skills to the test by creating an enclosure for your weather station.  
+In today's workshop, you will work in small groups to construct simple circuits into a working weather station. You will learn how to use microcontrollers and connect them to electronic components to measure atmospheric variables (temperature, humidity, light intensity, etc.), output them to your computer screen, and trigger other actions based on their values. You'll also learn some of the basics of temperature measurement, and you'll get a chance to put your building skills to the test by creating an enclosure for your weather station prototype.  
 
 ## Learning objectives
 By the end of today's workshop, you should be able to: 
-- Apply the tools used today to coordinate a crowdsourcing campaign.
-- Describe and apply the principles of digital mapping to create effective maps.
-- Explain the importance of tidy data.
-- Use GIS software to perform spatial analyses and create static and web maps.  
+- Describe the fundamental concepts and operational principles of simple circuits, sensors and actuators.
+- Apply fundamental principles to build simple circuits that interact with their surrounding environments.
+- Create and modify software code to control the device and create comments to document its functionality.
+- Explain the basics of temperature measurement and the considerations necessary to do it with accuracy and consistency.
+- Apply basic knowledge of weather station design to build a working prototype.
 
 ## Today's schedule
 
-|Time|Activity|
-|:---|:---|
-|9:30 - 9:50|Welcome & intro to simple circuits|
-|9:50 - 10:00|Equipment setup and connection|
-|10:00 - 11:00|Basic circuits and programs|
-|11:00 - 11:45|Testing weather station components|
-|11:50 - 13:00|**LUNCH**|
-|13:00 - 13:30|Basics of measuring temperature|
-|13:30 - 14:15|Building a prototype|
-|14:25 - 15:00|Building an enclosure|
-|15:00 - 15:20|Testing our weather station|
-|15:20 - 15:40|Final discussion and wrap-up|
+|Time|Activity Type|Topic
+|:---|:---|:---|
+|9:30 - 9:50|Presentation|Welcome & intro to simple circuits|
+|9:50 - 10:00|Exercise|Equipment setup and connection|
+|10:00 - 11:00|Presentation + Hands-on|Basic circuits and programs|
+|11:00 - 11:45|Exercise|Testing weather station components|
+|11:50 - 13:00|**LUNCH**|**LUNCH**|
+|13:00 - 13:30|Presentation|Basics of temperature measurement|
+|13:30 - 14:15|Exercise|Building our weather station prototypes|
+|14:25 - 15:00|Exercise|Building an enclosure|
+|15:00 - 15:20|Exercise|Testing our weather station|
+|15:20 - 15:40|Presentation|Final discussion and wrap-up|
+
+## Expectations and recipes for success
+- Put in your best effort — It’s not about how much you build, but how much you learn
+- Share in the learning: 
+	- Take turns; give everyone a chance to learn something new. If you've already learned this, allow and support others to learn. 
+	- Use others as resources, when needed: Jay, Matt, other PAs, and your peers. If you have completed your task and another group needs help, lend your help.
+- Participate in conversations. Be creative and ask questions.
+- Have fun and don't worry about making a mistake. 
+- Put up your hand when you're stuck.
 
 ## Today's slides
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTFig4nUsKsC4GbYZ-jYRo8R4eFkUjds3dTgW-hZzZ36Rh1rZ9z7Sl7xscwjJm0tCFl7pduV6Z7vymP/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
