@@ -1,13 +1,16 @@
 ---
 layout: default
-title: Intro to GIS
+title: Simple Circuits
 nav_order: 3
 ---
 
 *Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page.*
 
-# Lesson 1: Intro to GIS
+# Lesson 1: Simple Circuits
 In this first lesson, you will get a quick introduction to the QGIS interface. QGIS is the world's most popular open source GIS software. It is incredibly powerful and can do all sorts of interesting visualizations and analyses. The primary challenge with this much functionality is that you have to learn what the buttons do and understand the terminology. We'll work on that here. As your output, you'll create a map of the McMaster University area.
+
+## Slides
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPUC_Mnnr0pDVCfybl-LGw7oXRn8mPPqP9iB4xs2C5j4a9szkbIz6_lWrYYzR7aJVpNuqNFEabFEOq/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ## Task 0: Download your data (if you have not already)
 **Complete this if not already done as part of the [Preparation](preparation) step.**
