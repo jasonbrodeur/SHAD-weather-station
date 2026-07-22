@@ -13,7 +13,7 @@ Prior to the workshop, please do the following:
 For this workshop, it is strongly recommended that groups install and use the desktop version of the Arduino IDE (version 2.3.10), which is available for Windows (versions 10 and 11), Linux, and macOS. Chromebook users can attempt to install Arduino Cloud via the Play store; however, this interface differs from the desktop version and may make it more difficult to follow along. 
 
 The Arduino board connects to a laptop via a USB Type A connection (see image below). If you do not have a USB Type A port, you will need to use a dongle that provides one (Jay also has 10 USB type C to type A adapters people can use).   
-<img width="250" alt="image" src="https://github.com/user-attachments/assets/1545c6f7-72df-49db-b586-fec1186df040" />
+<img width="250" alt="USB Type B connector" src="https://github.com/user-attachments/assets/1545c6f7-72df-49db-b586-fec1186df040" />
 
 Ideally, at least two people per 4-person group have compatible laptops. 
 
