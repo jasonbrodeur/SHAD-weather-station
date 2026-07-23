@@ -30,13 +30,18 @@
 Wiring example: 
 https://docs.arduino.cc/built-in-examples/analog/AnalogInput/
 */
-
+// Include libraries
 #include <math.h> // include the math library
+// DHT11 REQUIRES the following Arduino libraries:
+// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
+// - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
+#include "DHT.h"
 
 // These constants won't change. They're used to give names to the pins used:
 const int PrPin = A0;  // Analog input pin that the photoresistor is attached to
 const int ThPin = 1;  // Analog input pin that the thermistor is attached to
 const int analogOutPin = 13;  // Analog output pin that the LED is attached to
+#define DHTPIN 2     // Digital pin connected to the DHT sensor
 
 // intermediate variables (for thermistor temperature calculation): 
 float vcc = 4.91;                       // only used for display purposes, if used set to the measured Vcc.
@@ -64,6 +69,7 @@ float Thermistor(int RawADC) {
   //Serial.print("/1024");                           // Print out RAW ADC Number
   //Serial.print(", vcc: ");
   //Serial.print(vcc,2);
+
   //Serial.print(", pad: ");
   //Serial.print(pad/1000,3);
   //Serial.print(" Kohms, Volts: ");
@@ -79,10 +85,15 @@ float Thermistor(int RawADC) {
 }
 // =====================================================
 
+// Initialize DHT sensor.
+DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
   // initialize serial communications at 9600 bps:
   Serial.begin(9600);
+  // Start the DHT
+  Serial.println(F("DHT11 test!"));
+  dht.begin();
 }
 
 void loop() {
@@ -97,15 +108,32 @@ void loop() {
   // %%% Read from Thermistor
   temp=Thermistor(analogRead(ThPin));       // read ADC and  convert it to Celsius
 
+  // Read from DHT
+  // Reading temperature or humidity takes about 250 milliseconds!
+  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+  // Read relative humidity as % 
+  float dht_hum = dht.readHumidity();
+  // Read temperature as Celsius (the default)
+  float dht_temp = dht.readTemperature();
+ // Compute heat index in Celsius (isFahreheit = false)
+  float dht_hi = dht.computeHeatIndex(t, h, false);
+
+
   // print the results to the Serial Monitor:
   Serial.print("photoresistor = ");
   Serial.print(sensorValue_PR);
   //Serial.print("\t LED output intensity = ");
   //Serial.print(outputValue);
-  Serial.print("\t Thermistor temperature (deg C)= ");
-  Serial.println(temp);
+  Serial.print(" | Thermistor temperature (deg C)= ");
+  Serial.print(temp);
+  Serial.print(" |  DHT temperature (deg C)= ");
+  Serial.print(dht_temp);
+  Serial.print(" | DHT relative humidity (%)= ");
+  Serial.print(dht_hum);
+  Serial.print(" | DHT humidex (dec C)= ");
+  Serial.println(dht_hi);
 
   // wait 100 milliseconds before the next loop for the analog-to-digital
   // converter to settle after the last reading:
-  delay(100);
+  delay(2000);
 }
