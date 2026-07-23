@@ -127,11 +127,11 @@ void loop() {
   Serial.print(sensorValue_PR);
   //Serial.print("\t LED output intensity = ");
   //Serial.print(outputValue);
-  Serial.print(" | Thermistor temperature (deg C)= ");
+  Serial.print(" | Thermistor T (C)= ");
   Serial.print(temp);
-  Serial.print(" |  DHT temperature (deg C)= ");
+  Serial.print(" | DHT T (C)= ");
   Serial.print(dht_temp);
-  Serial.print(" | DHT relative humidity (%)= ");
+  Serial.print(" | DHT RH (%)= ");
   Serial.print(dht_hum);
   Serial.print(" | DHT humidex (dec C)= ");
   Serial.println(dht_hi);
