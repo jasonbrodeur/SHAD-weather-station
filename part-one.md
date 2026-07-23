@@ -4,6 +4,8 @@ title: Simple Circuits
 nav_order: 3
 ---
 
+**FIND THIS WEBSITE AT [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station)**
+
 *Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page.*
 
 # Lesson 1: Learning simple circuits
