@@ -7,7 +7,7 @@ nav_order: 3
 *Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page.*
 
 # Lesson 1: Learning simple circuits
-In this first lesson, you will learn how to connect your Arduino, interact with and program it via sketches on the Arduino IDE, and build some simple circuits using actuators and sensors. 
+In this first lesson, you will learn how to connect your Arduino, interact with and program it via sketches on the Arduino IDE, and build some simple circuits using an LED. 
 
 ## Task 1: Connect your Arduino to your laptop
 Now that you've unpacked your kit, it's time to plug in your Arduino and begin using it.
@@ -32,142 +32,164 @@ A physically connected Arduino should appear in the Serial Ports list as **COMX 
 To establish the serial connection, click on the listed COM port that where the Arduino is connected. A checkmark should appear beside the port when a connection has been made.
 ![Arduino IDE with Ports window showing](assets/img/arduino-port2.png "Arduino IDE Ports list -- Arduino connected")
 
+## Task 2: Open a program and upload it to the Arduino
+### 2.1 Open the program "blink"
+In this exercise, you are going to upload your first program to the Arduino. For this case, we'll use one of the example programs that come with the Arduino IDE.
+- Go to `>File>Examples>01.Basics` and click on **Blink**. This will open up a new sketch (what Arduino calls its programs) with the Blink program. 
 
-## Slides
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPUC_Mnnr0pDVCfybl-LGw7oXRn8mPPqP9iB4xs2C5j4a9szkbIz6_lWrYYzR7aJVpNuqNFEabFEOq/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+![Arduino IDE showing the blink program](assets/img/opening-blink.png "Opening blink in the Arduino IDE")
 
-## Task 0: Download your data (if you have not already)
-**Complete this if not already done as part of the [Preparation](preparation) step.**
-In this exercise, we'll learn how to use QGIS by using data that is available from the City of Hamilton [Open Data Portal](https://www.hamilton.ca/city-council/data-maps/open-data). The open data portal has a wide variety of numeric and geospatial data sets that are free and open to use. Many cities and regions now have similar kinds of open data portals, so be sure to check if you're ever doing analyses on your local area!
+### 2.2 Upload "blink" to the Arduino
+- Ensuring that the Arduino is connected (both physically and through the COM port), click the upload button. 
+  - The status window should first indicate that it is *Compiling sketch*, and then indicate that it is *Uploading*.
+- If the upload was succesful, the status window will indicate *Done uploading*, and the info window will communicate the following (or similar):
+```
+Sketch uses 924 bytes (2%) of program storage space. Maximum is 32256 bytes.
+Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for local variables. Maximum is 2048 bytes.
+```
+***If you encounter an error***:
+- If an error occurs, the status window will provide a general error message, and the info window will give additional information on it (you may need to scroll to see it). 
+  - If the error occurred when uploading (i.e. a connection couldn't be made between the computer and the Arduino), the status window will read: *An error occurred while uploading the sketch*. 
+  - If the error occurred when compiling the code (i.e. there's something wrong with your code), the status window will provide an error message, and the problematic line will be highlighted in the sketch. 
 
-To download the data: 
-- Download ```hamilton-data.zip``` from the [workshop GitHub repository](https://github.com/jasonbrodeur/SHAD-mapping/blob/main/data/hamilton-data.zip) by clicking [this link](https://github.com/jasonbrodeur/SHAD-mapping/raw/main/data/hamilton-data.zip) to download it directly [(bit.ly/shad-ham-data)](https://bit.ly/shad-ham-data).
-- Download the data into the directory that you want to use for this workshop (i.e. know where you saved the file and use a folder where you can read/write data)
-- **UNZIP THE FILE**. This is very important--otherwise, weird things are going to happen for you.   
+## Part 3: Understanding an Arduino sketch
+The blink sketch provides a good opportunity to explore the three fundamental elements of an Arduino sketch. 
 
-## Task 1: Learn the interface; Add and explore data
-**Objective**: Explore the user interface 
-- On your computer, open **QGIS Desktop**. 
-- Follow along with Jay's introduction to the important buttons and panels of the QGIS interface. 
-- Go to ```Project>Properties``` and set your project Coordinate Reference System (CRS) to ```NAD83 / UTM zone 17N [EPSG:26917]```. 
-	- Check the box to “Enable on-the-fly CRS transformation”
-- Find your downloaded and unzipped data using the **Browser panel**.
-- Add a number of vector layers from the downloaded City of Hamilton data by dragging the shapefile (.shp) into the data frame (large window). Be sure to include at least the ```Street_Centreline```, ```Buildings```, and ```Educational_Institutions``` layers. Add some more!
-- Explore the attribute tables of these layers (Right-click on a layer in the **Layers panel** and select ```Open attribute table```.
-- Save your project: >Project>Save As… [this saves a project file with an extension .qgs]. Give your project file a meaningful name.
-	- Note that project files do not resave your layers--it simply preserves the links to the loaded layers, as well as any custom layer styling you’ve used.
+### The commented preface
+![Arduino blink sketch comments](assets/img/blink-comment.png "Blink sketch comments")
 
-## Task 2: Style vector layers 
-**Objective**: Style your vector layers to create a map of a neighbourhood or area of Hamilton. 
-- Add/remove layers from the Open Hamilton Data folder as necessary or desired. Keep ```Street_Centreline``` and ```Buildings```, and be sure to add all other relevant layers. 
-- Move layers up and down in the **Layers panel**, note how it affects the drawing order.
-- Style the layers by navigating to the **Style** tab of the Properties dialogue box (double click the layer or right-click and select ```Properties```).
-- Follow Jay’s instructions on styling vector layers. Then, experiment on your own. 
-- See [this YouTube video](https://goo.gl/MEyCrD) and some other videos by Klas Karlsson for ideas on custom vector styling.
+The opening, grey-text section of the sketch is a block comment that contains human-readable information about the program. This section is ignored by the Arduino compiler, and its sole purpose is to provide humans (whether yourself or others) with more information on the code. Comments can be inserted into a sketch as a block using the ```/*``` and ```*/``` characters around the commented text, e.g:
+```
+/* 
+All of this is 
+a comment
+*/
+```
 
-## Task 3: Add labels to layers
-- Select the ```Street_Centreline``` layer and click on the **Layer Labeling Options** button ![QGIS layer button icon](assets/img/label-button.png).
-- In the top dropdown menu, select ```Single Labels```
-- In the ```Value``` dropdown menu, select the ```STREET_NAM``` field. Click **Apply**.
-- Explore the tabs for labelling options
-	- In the **Text** tab, adjust the font type, size, colour (if desired).
-	- If interested, experiment with the options in the **Formatting** tab.
-	- In the **Buffer** tab, check to turn on ```Draw text buffer```.
-	- In the **Rendering** tab, reduce the number of labels on the map by checking ```Merge connected lines to avoid duplicate labels```.
-- Use a rule to more finely control which road labels are shown and display only roads that are designated as 'Major' in the ROAD_TYPE column in the attribute table: 
-	- In the **Rendering** tab, go to the ```Data defined``` section and select the dropdown beside ```Show label```. In the dropdown, select ```Edit```
-	- <img src="assets/img/data-defined-label1.png" alt="Data-defined label box" width="200">
-  	- In the ```Expression``` box of the **Expression String Builder** window, enter: ```ROAD_TYPE like 'Major'```. Click OK.
-	- <img src="assets/img/data-defined-label2.png" alt="Expression string builder box" width="400">
-  	- Note that the labels are now only applied to major roads. 
-	- Keep this setting, or remove it by re-clicking the dropdown and selecting ```Clear```.
+Comments are an important part of writing and maintaining computer code, as it's often much easier to understand what the code is doing when there is plain, human-readable text accompanying it. It's also important to record your changes over time. Additionally, you can use comments to temporarily remove certain lines of code that you don't want to be executed.
 
-## Task 4: Find McMaster University
-- Load the `Educational Institutions` layer (if you haven't already)
-- In the Layers panel, right click the `Educational Institutions` layer and select `Open Attribute Table`.
-- In the attribute table, find `McMaster University` in the NAME field (its Object ID is 143).
-- Click the row number (143) to highlight the row with McMaster University listed.
-- On the attribute table toolbar, click "Zoom map to selected rows", as shown below:
-	- <img src="assets/img/zoom-to-row.png" alt="Attribute table" width="500">
+A good commented preface should contain some/all of the following information:
+- What the code does.
+- A description (or link to a diagram) of the circuit that it works alongside. 
+- Links to any other information.
+- Who created it, revised it, and when this was done.
+- Information on licensing / rights on the code.
 
-<!--
-## Task 4: Identify a Hamilton neighbourhood to map
-**Objective**: Here, you are going to select a neighbourhood of your choice and prepare it for exporting a map. 
-**Note**: If you get behind on the lesson or something goes wrong here, simply skip to Task 5 to catch up. 
-- Add all layers of interest. Ensure that you have added the ```Neighbourhoods``` layer to your map and that it is the topmost layer (drag or move it up).
-- Turn on labels for the ```Neighbourhoods``` layer and label it using the value of the "NEIGHBOURH" field.
-- Style the ```Neighbourhoods``` layer so that the areas are not filled (outline only). Use a thick border so that you can distinguish their boundaries.
-- Zoom to the approximate extent of your neighbourhood.
-- Select the other layers you would like to show and style them appropriately.
-- Select the polygon that represents your neighbourhood's extent in the ```Neighbourhoods``` layer.
-  - Select the ```Neighbourhoods``` layer in the **Layers** panel and ensure it is highlighted.
-  - From the top toolbar, click on the ```Select Features by Area of Single Click``` button ![QGIS layer button icon](assets/img/select-features.png).
-  - In the map pane, click within the boundaries of your neighbourhood. If you've done this correctly, your neighbourhood should highlight in yellow.
-- Use the ```Difference``` tool to show your neighbourhood and black out the rest
-  - With your neighbourhood selected in the map pane go to ```Vector > Geoprocessing Tools > Difference``` in the top menu.
-  - When the ```Difference``` window appears, enter the following values:
-    - ```Input layer```: ```Neighbourhoods``` (Leave ```Selected features only``` unchecked) 
-    - ```Overlay layer```: ```Neighbourhoods``` (Check ```Selected features only```)
-    - <img src="assets/img/difference.png" alt="Difference dialogue box" width="500">
-    - Click Run. If done correctly, you should have a new layer called ```Difference``` at the top of your Layers list. The ```Difference``` layer should show all areas except your neighbourhood in a solid colour.
-    - Deselect your neighbourhood by clicking the ```Deselect Features from all Layers``` button ![QGIS layer button icon](assets/img/unselect-features.png) from the top toolbar.
-    - Finally, choose a very dark colour (black, dark grey, dark blue, dark purple, etc.) or very light colour (e.g., white) for your ```Difference``` layer and change opacity to between 50 and 80%. This will wash out the surrounding neighbourhoods and help yours stand out.
--->
 
-## Task 5: Compose a map of the McMaster University Area
-**Objective**: Create a map of the McMaster University area.
-- Zoom the main data frame to the approximate desired extents for your map.
-- Add all desired layers (Streets and Buildings should be added, at a minimum).
-- Click on the **New Print Layout** button to open the map creation window. 
-	- Give your map a name when the dialogue box comes up. 
-- In the map composer, add the critical elements of a map: 
-	- Click the **Add new map** button and then draw a box to specify your map’s extent on the page. This will draw the contents of your data frame onto the map. 
-	- Use the **Move Item Content* button to change the extent and zoom. Click “Update Preview” in the “Main Properties” box to regenerate preview.
-- With the map content selected, go to **Item Properties** and add a frame (if desired), a grid, or both.
-- See [this video](http://goo.gl/3yPkme) for some examples of how to style the map.  
+You'll also notice later in the sketch that comments are inserted on single lines (whether at the start or end) using the ```//``` characters: 
+```
+// This is a commented line
+```
 
-### Standard map elements
-<img src="assets/img/map-elements.png" alt="Map with standard elements labeled" width="500">  
+### The setup function
+![Arduino blink sketch setup function](assets/img/blink-setup.png "Blink sketch setup function")
 
-| Map Element | Description |
-| :--- | :--- |
-| Data | The core visual content and features of the map, representing the real-world information being conveyed. |
-| Title | A clear, concise heading that tells the reader what the map is about, where it is located, and the time period it represents. |
-| Frame/Neatline | A border that encapsulates the map elements, defining the map's extent and keeping the layout organized. |
-| Scale | A graphical, numerical, or textual relationship between distances on the map and the actual distances on the ground. |
-| Legend | A key that explains the meaning of the symbols, colors, and patterns used throughout the map. |
-| North Arrow | A directional indicator that orientats the map, often pointing toward true north. |
-| Source Information | A citation that credits the origin of the data used to create the map for transparency and credibility. |
-| Author, date, projection, ©, etc. | Metadata that indicates accountability and technical context, including who made the map, when it was created, how the Earth's surface was flattened, and legal copyright ownership. |
+As mentioned in the comment above it, the setup function runs a single time when the board is turned on, reset, or when a new program is uploaded to it. The purpose of the setup function is to declare constants and run commands that configure the Arduino board to operate as desired in the following loop function. 
 
-<!--
-- **Data**: The core visual content and features of the map, representing the real-world information being conveyed.
-- **Title**: A clear, concise heading that tells the reader what the map is about, where it is located, and the time period it represents.
-- **Frame/Neatline**: A border that encapsulates the map elements, defining the map's extent and keeping the layout organized.
-- **Scale**: A graphical, numerical, or textual relationship between distances on the map and the actual distances on the ground.
-- **Legend**: A key that explains the meaning of the symbols, colors, and patterns used throughout the map.
-- **North Arrow**: A directional indicator that orientats the map, often pointing toward true north.
-- **Source Information**: A citation that credits the origin of the data used to create the map for transparency and credibility.
-- **Author, date, projection, ©, etc.**: Metadata that indicates accountability and technical context, including who made the map, when it was created, how the Earth's surface was flattened, and legal copyright ownership.
---> 
+Note the general structure of a function used for the setup function (and other functions):
 
-## Task 6: Annotate the map 
-- Use the **Add New Labels** button to add any desired labels (Use the ```Item Properties``` tab to control font size, colour, and background)
-- Use the **Add North Arrow** button to add a North arrow
-	- With the north arrow selected, scale it to the right size
-	- Go to ``` > Item Properties``` to select symbol different than the default. 
-- Use the **Add Label** button to add a title. Include the creator's name and creation date
-- Use the “Add legend” button to insert a legend, if desired. 
-	- With the legend selected, click the “Item Properties” tab, rename and rearrange the legend items
-- Use the **Add Scale Bar**  tool to insert a scale bar 
-	- Drag the bar to the desired location and size. Edit other details in the **Items Properties** box, if desired.
-	- Set units to Meters, and Label to “m” (if not already done for your map) 
-	- Select the desired number of segments,
+```
+<returned_value> <name of function> (<input values>){
+first command; //commands end with a semicolon
+second command;
+third command;
+...
+} // curly braces contain the commands at the top and bottom
+```
 
-## Task 7: Export the map to an image file
-- In the map composer, use either the **Export as image** or **Export as PDF** buttons to export the map in the desired format to a desired directory. 
+In this casee, there is no returned value (the term ```void``` is used to indicate this), the name of the function is *setup*, there are no input values (thus the empty parentheses), and there is only one command executed.
 
-## Task 8: Save your project file 
-- Click the **Save** button to save your changes. 
+#### Q1: 
+- In this example, the only command executed in the setup function is ```pinMode(LED_BUILTIN, OUTPUT);```. What does this line do? 
 
+#### A1: 
+- ```pinmode``` is a built-in function that allows you to determine whether a given digital pin should be *INPUT* (receives current) or *OUTPUT* (delivers current). 
+- The first *argument* to the function, ```LED_BUILTIN``` is a built-in constant that refers to digital pin 13, which is connected to the built-in LED on the Arduino board (labelled **"L"**). Note that you could replace ```LED_BUILTIN``` with ```13``` and it would work just the same. 
+- The second *argument*, ```OUTPUT```, indicates that digital pin 13 should be set to output current.
+
+### The loop function
+![Arduino blink sketch loop function](assets/img/blink-loop.png "Blink sketch loop function")
+
+As also indicated in the preceding comment, the loop function will run repeatedly for as long as the Arduino board is powered and operational. The loop function uses the same form as described above, and contains four lines of executed commands. 
+
+#### Q2:
+- What instructions are each of these lines providing to the Arduino board?
+
+## Part 4: Modifying a sketch
+Modify the Blink code so that the onboard LED blinks at a different frequency. **Remember** to save your code and upload it to the Arduino after you've modified it.
+
+- How fast can you make it blink? 
+- Can you make it blink at always-differing intervals? 
+
+## Part 5: Inserting an LED
+If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in the Arduino code) is also connected to digital pin 13 on your Arduino board. You can connect an LED to this pin in a circuit by connecting one leg to digital pin 13 and the other to the adjacent pin labeled **GND**.
+- The **GND** is the *ground* connection of the circuit. Circuits require a higher- and lower-voltage connection to permit current to pass through it. The ground pin often serves this purpose. In this case, digital pin 13 serves as the higher-voltage connection, and current flows from pin 13, through the LED and toward GND. 
+- Try connnecting one of your standard (two-legged) LEDs. If it doesn't work, turn it around and connect it the other way. 
+
+#### Question: 
+- What happened? Did it work in both directions? 
+
+#### Answer: 
+- You probably noticed that it only worked in one direction. This is because an LED is a uni-directional device. Current must enter through the anode (connected to pin 13 in this case) and leave through the cathode (connected to GND in this case) for light to be generated. 
+- The anode and cathode can usually be identified with a couple of visual queues: The anode has a longer leg, and the cathode has a flattened plastic bottom brim. 
+
+![Image of LED](assets/img/led.png "LED: Anode and Cathode")
+
+## Part 6: Reviewing our circuit
+So, you may be asking yourself at this point: *"Is that the proper way to connect that LED?"*. This is an excellent question. To find the answer:
+- Navigate to the [Arduino tutorial page for Blink](https://www.arduino.cc/en/Tutorial/Blink) (which is provided in the comments of the Blink code)
+- Note the hardware required
+- Scroll down to view the circuit diagram. **What's missing from our current circuit?**
+
+Before we move forward, you'll need to understand how to identify the proper resistor to place into the circuit. 
+
+### Resistors 
+Resistors are important elements of circuits, as they control the flow of current through a circuit. This may be necessary to ensure that a connected device works properly, or to protect it from being damaged by current that is too high. The higher the resistance of a resistor, the more current is restricted through it. The unit of resistance is referred to as the ohm (symbol &#937). Resistors use colour codes to indicate their resistance value--these may be communicated using 4- 5- or 6-band systems. 
+
+Here's a diagram demonstrating the 4- and 5-band systems: 
+![Resistor color code chart](images/resistor-codes.png "Resistor Colour Code Chart")
+
+And here's a further explanation of the examples: 
+![Resistor color code chart](images/resistor-example.png "Resistor Colour Code Chart Explained")
+
+#### Question 1
+Use the colour code above to answer the following questions: 
+- What colour code would be found on a 10 Kohm (10000 ohm) resistor using: 
+  - Four bands?
+  - Five bands?
+
+#### Answer 1
+Use [resisto.rs](http://resisto.rs/) to assess your answer (enter ```10K``` into the box). A resource like [resisto.rs](http://resisto.rs/) is useful when you have a desired resistance and want to know the colour code.
+
+#### Question 2
+Identify all of the 10 Kohm resistors in your kit
+- ***Hint***: there may be a mix of 4- and 5-band codes used
+
+#### Question 3
+Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
+- ***Hint:*** Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
+
+## Part 7: Building a proper circuit
+Now that you've properly identified the resistor you need for this circuit, how are you going to connect the pieces?
+- You could attempt to twist the wires together, but you might break something and it won't be very reliable
+- You could solder the pieces together, but we're just experimenting here. 
+- **To connect this circuit, we're going to use a solderless breadboard**
+
+### Solderless breadboard**
+The solderless breadboard allows you to create circuits quickly without the need for soldering connections together. 
+- Metal strips run through the backside of the breadboard, which connect specific rows and columns together in a defined manner: 
+
+![Solderless breadboard](images/breadboard.png "Solderless Breadboard")
+
+Note in the example above that connections run horizontally across rows of 5 on the inner part of the breadboard, while connections run vertically down the outside columns. 
+
+### 7.1 Build a proper circuit
+Create the proper blink circuit using: 
+- The solderless breadboard
+- The LED from the first circuit
+- An appropriate resistor
+- Jumper cables to connect the breadboard to the Arduino pins.
+When you've succeeded, save your sketch to your local working folder with an appropriate name.
+
+---  
 **All done?** Let's move on to your [second lesson](mapping-our-data), where we will map our newly-collected data!
