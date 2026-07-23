@@ -6,8 +6,32 @@ nav_order: 3
 
 *Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page.*
 
-# Lesson 1: Simple Circuits
-In this first lesson, you will get a quick introduction to the QGIS interface. QGIS is the world's most popular open source GIS software. It is incredibly powerful and can do all sorts of interesting visualizations and analyses. The primary challenge with this much functionality is that you have to learn what the buttons do and understand the terminology. We'll work on that here. As your output, you'll create a map of the McMaster University area.
+# Lesson 1: Learning simple circuits
+In this first lesson, you will learn how to connect your Arduino, interact with and program it via sketches on the Arduino IDE, and build some simple circuits using actuators and sensors. 
+
+## Task 1: Connect your Arduino to your laptop
+Now that you've unpacked your kit, it's time to plug in your Arduino and begin using it.
+
+### 1.1 Plug it in!
+- The Arduino can use the USB port to communicate with your computer, as well as draw power from it. Use the USB cable provided to connect the Arduino to your computer's USB port. If done correctly, the on-board LED labeled "**ON**" should light up. If this doesn't work, disconnect and attempt again. 
+- Depending on what program was uploaded to your Arduino board last, you may or may not see the on-board LED (labeled `L`) light up or flash. Arduinos will run its uploaded program upon power-up, and will continue to do so until the *reset* button is pressed, the power is disconnected, or the board breaks. 
+  - Note that the on-board LED lalebeled "**L**" is connected to digital input/output (IO) pin number 13; if the running program provides instructions for electrical current to be provided to pin 13, it'll be reflected in the on-board LED (whether or not anything is connected to digital pin 13). 
+
+### 1.2 Establish a data connection
+Once your Arduino is physically connected to your computer, open up the **Arduino IDE** from your laptop's program list. A new sketch window will appear. The sketch window contains a number of different areas, which are labeled below. You'll learn and use these functions througout the module.
+
+![Arduino IDE with parts labeled](assets/img/arduino-ide.png "The Arduino IDE")
+
+Depending on your operating system, your Arduino may or may not be connected via a serial port (which allows for communication between the computer and the Arduino). 
+- You can check the status of your connection by clicking on >Tools>Port. 
+
+A physically connected Arduino should appear in the Serial Ports list as **COMX (Arduino UNO)** as shown below:
+
+![Arduino IDE with Ports window showing](assets/img/arduino-port1.png "Arduino IDE Ports list -- Arduino not connected")
+
+To establish the serial connection, click on the listed COM port that where the Arduino is connected. A checkmark should appear beside the port when a connection has been made.
+![Arduino IDE with Ports window showing](assets/img/arduino-port2.png "Arduino IDE Ports list -- Arduino connected")
+
 
 ## Slides
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPUC_Mnnr0pDVCfybl-LGw7oXRn8mPPqP9iB4xs2C5j4a9szkbIz6_lWrYYzR7aJVpNuqNFEabFEOq/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
