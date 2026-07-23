@@ -151,10 +151,10 @@ Before we move forward, you'll need to understand how to identify the proper res
 Resistors are important elements of circuits, as they control the flow of current through a circuit. This may be necessary to ensure that a connected device works properly, or to protect it from being damaged by current that is too high. The higher the resistance of a resistor, the more current is restricted through it. The unit of resistance is referred to as the ohm (symbol &#937). Resistors use colour codes to indicate their resistance value--these may be communicated using 4- 5- or 6-band systems. 
 
 Here's a diagram demonstrating the 4- and 5-band systems: 
-![Resistor color code chart](images/resistor-codes.png "Resistor Colour Code Chart")
+![Resistor color code chart](assets/img/resistor-codes.png "Resistor Colour Code Chart")
 
 And here's a further explanation of the examples: 
-![Resistor color code chart](images/resistor-example.png "Resistor Colour Code Chart Explained")
+![Resistor color code chart](assets/img/resistor-example.png "Resistor Colour Code Chart Explained")
 
 #### Question 1
 Use the colour code above to answer the following questions: 
@@ -183,7 +183,7 @@ Now that you've properly identified the resistor you need for this circuit, how 
 The solderless breadboard allows you to create circuits quickly without the need for soldering connections together. 
 - Metal strips run through the backside of the breadboard, which connect specific rows and columns together in a defined manner: 
 
-![Solderless breadboard](images/breadboard.png "Solderless Breadboard")
+![Solderless breadboard](assets/img/breadboard.png "Solderless Breadboard")
 
 Note in the example above that connections run horizontally across rows of 5 on the inner part of the breadboard, while connections run vertically down the outside columns. 
 
