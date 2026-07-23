@@ -8,8 +8,116 @@ nav_order: 4
 
 *Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page and completed [Lesson 1: Intro to GIS](intro-to-GIS).*
 
-# Lesson 2: Mapping our data 
-In this lesson, you will build on the skills gained during [lesson 1], to create a map that shows the outcome of our outdoor spaces assessment. 
+# Lesson 2: Connecting sensors 
+In this lesson, you will build on the skills gained during [lesson 1](part-one), to connect some sensors to the Arduino.
+
+- This part requires that you've installed the Adafruit DHT Library, as outlined on the [preparation](preparation) page. 
+- From the top menu on the Arduino IDE, go to `File>Examples>DHT Sensor Library` and open the **DHTtester** sketch.
+- VCC: Connect to 3.3V or 5V on your MCU (based on your sensor's specification).
+- Data: Connect to a digital I/O pin on your MCU (not an analog pin). For the provided examples, we use digital pin 2 by default.
+- Ground (GND): Connect to the ground of your MCU.
+![DHT11 wiring diagram](assets/img/dht11-wiring.png "DHT wiring diagram")
+- On rows 15 and 16 of the `DHTtester.ino` sketch, do the following:
+  - remove the comment (`//`) at the start of row 15
+  - add a comment to the start of row 16.
+  - Your updated code should look like the following:
+    -
+```
+15	#define DHTTYPE DHT11   // DHT 11
+16	//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+17	//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+```
+- Upload your sketch to the Arduino
+- Open the Serial Port. You should now see values from the sensor, e.g.,:
+```
+Humidity: 49.00%  Temperature: 24.10°C 75.38°F  Heat index: 23.84°C 74.92°F
+Humidity: 49.00%  Temperature: 24.10°C 75.38°F  Heat index: 23.84°C 74.92°F
+Humidity: 49.00%  Temperature: 24.10°C 75.38°F  Heat index: 23.84°C 74.92°F
+Humidity: 49.00%  Temperature: 24.10°C 75.38°F  Heat index: 23.84°C 74.92°F
+Humidity: 49.00%  Temperature: 24.10°C 75.38°F  Heat index: 23.84°C 74.92°F
+```        
+- Experiment with the sensor to see if it responds to different environments (e.g., close your hand on it; put it close to your breath). Did the values change? Was it what you expected? Did the change happen immediately or did the change take time? Which part of the sensor is most responsive? 
+
+Full code for DHTtester:
+```
+// Example testing sketch for various DHT humidity/temperature sensors
+// Written by ladyada, public domain
+
+// REQUIRES the following Arduino libraries:
+// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
+// - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
+
+#include "DHT.h"
+
+#define DHTPIN 2     // Digital pin connected to the DHT sensor
+// Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
+// Pin 15 can work but DHT must be disconnected during program upload.
+
+// Uncomment whatever type you're using!
+#define DHTTYPE DHT11   // DHT 11
+//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+//#define DHTTYPE DHT21   // DHT 21 (AM2301)
+
+// Connect pin 1 (on the left) of the sensor to +5V
+// NOTE: If using a board with 3.3V logic like an Arduino Due connect pin 1
+// to 3.3V instead of 5V!
+// Connect pin 2 of the sensor to whatever your DHTPIN is
+// Connect pin 3 (on the right) of the sensor to GROUND (if your sensor has 3 pins)
+// Connect pin 4 (on the right) of the sensor to GROUND and leave the pin 3 EMPTY (if your sensor has 4 pins)
+// Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
+
+// Initialize DHT sensor.
+// Note that older versions of this library took an optional third parameter to
+// tweak the timings for faster processors.  This parameter is no longer needed
+// as the current DHT reading algorithm adjusts itself to work on faster procs.
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println(F("DHTxx test!"));
+
+  dht.begin();
+}
+
+void loop() {
+  // Wait a few seconds between measurements.
+  delay(2000);
+
+  // Reading temperature or humidity takes about 250 milliseconds!
+  // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+  float h = dht.readHumidity();
+  // Read temperature as Celsius (the default)
+  float t = dht.readTemperature();
+  // Read temperature as Fahrenheit (isFahrenheit = true)
+  float f = dht.readTemperature(true);
+
+  // Check if any reads failed and exit early (to try again).
+  if (isnan(h) || isnan(t) || isnan(f)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+
+  // Compute heat index in Fahrenheit (the default)
+  float hif = dht.computeHeatIndex(f, h);
+  // Compute heat index in Celsius (isFahreheit = false)
+  float hic = dht.computeHeatIndex(t, h, false);
+
+  Serial.print(F("Humidity: "));
+  Serial.print(h);
+  Serial.print(F("%  Temperature: "));
+  Serial.print(t);
+  Serial.print(F("°C "));
+  Serial.print(f);
+  Serial.print(F("°F  Heat index: "));
+  Serial.print(hic);
+  Serial.print(F("°C "));
+  Serial.print(hif);
+  Serial.println(F("°F"));
+}
+```
+
+- (JB) **Talk about how it works**
+
 
 ## Task 0: Download our data set
 - Download our ```outdoor-space-data.csv``` file (as a zip file) using [this link](https://jasonbrodeur.github.io/SHAD-mapping/data/outdoor-space-data.csv) (or at [bit.ly/shad-outdoor-space-data](https://bit.ly/shad-outdoor-space-data)). This file is hosted on our [workshop GitHub repository](https://github.com/jasonbrodeur/SHAD-mapping/blob/main/data/).
