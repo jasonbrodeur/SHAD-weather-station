@@ -32,6 +32,8 @@ A physically connected Arduino should appear in the Serial Ports list as **COMX 
 To establish the serial connection, click on the listed COM port that where the Arduino is connected. A checkmark should appear beside the port when a connection has been made.
 ![Arduino IDE with Ports window showing](assets/img/arduino-port2.png "Arduino IDE Ports list -- Arduino connected")
 
+If you are prompted to **Select Other Board or Port**, choose `Arduino UNO` from the dropdown and click OK. 
+
 ## Task 2: Open a program and upload it to the Arduino
 ### 2.1 Open the program "blink"
 In this exercise, you are going to upload your first program to the Arduino. For this case, we'll use one of the example programs that come with the Arduino IDE.
