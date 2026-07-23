@@ -42,6 +42,9 @@ const int PrPin = A0;  // Analog input pin that the photoresistor is attached to
 const int ThPin = 1;  // Analog input pin that the thermistor is attached to
 const int analogOutPin = 13;  // Analog output pin that the LED is attached to
 #define DHTPIN 2     // Digital pin connected to the DHT sensor
+#define DHTTYPE DHT11   // DHT 11
+//#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
+//#define DHTTYPE DHT21   // DHT 21 (AM2301)
 
 // intermediate variables (for thermistor temperature calculation): 
 float vcc = 4.91;                       // only used for display purposes, if used set to the measured Vcc.
@@ -116,7 +119,7 @@ void loop() {
   // Read temperature as Celsius (the default)
   float dht_temp = dht.readTemperature();
  // Compute heat index in Celsius (isFahreheit = false)
-  float dht_hi = dht.computeHeatIndex(t, h, false);
+  float dht_hi = dht.computeHeatIndex(dht_temp, dht_hum, false);
 
 
   // print the results to the Serial Monitor:
