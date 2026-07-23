@@ -52,7 +52,7 @@ Global variables use 9 bytes (0%) of dynamic memory, leaving 2039 bytes for loca
   - If the error occurred when uploading (i.e. a connection couldn't be made between the computer and the Arduino), the status window will read: *An error occurred while uploading the sketch*. 
   - If the error occurred when compiling the code (i.e. there's something wrong with your code), the status window will provide an error message, and the problematic line will be highlighted in the sketch. 
 
-## Part 3: Understanding an Arduino sketch
+## Task 3: Understanding an Arduino sketch
 The blink sketch provides a good opportunity to explore the three fundamental elements of an Arduino sketch. 
 
 ### The commented preface
@@ -115,13 +115,13 @@ As also indicated in the preceding comment, the loop function will run repeatedl
 #### Q2:
 - What instructions are each of these lines providing to the Arduino board?
 
-## Part 4: Modifying a sketch
+## Task 4: Modifying a sketch
 Modify the Blink code so that the onboard LED blinks at a different frequency. **Remember** to save your code and upload it to the Arduino after you've modified it.
 
 - How fast can you make it blink? 
 - Can you make it blink at always-differing intervals? 
 
-## Part 5: Inserting an LED
+## Task 5: Inserting an LED
 If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in the Arduino code) is also connected to digital pin 13 on your Arduino board. You can connect an LED to this pin in a circuit by connecting one leg to digital pin 13 and the other to the adjacent pin labeled **GND**.
 - The **GND** is the *ground* connection of the circuit. Circuits require a higher- and lower-voltage connection to permit current to pass through it. The ground pin often serves this purpose. In this case, digital pin 13 serves as the higher-voltage connection, and current flows from pin 13, through the LED and toward GND. 
 - Try connnecting one of your standard (two-legged) LEDs. If it doesn't work, turn it around and connect it the other way. 
@@ -135,7 +135,7 @@ If you recall from earlier, the on-board LED (indicated by ```LED_BUILTIN``` in 
 
 ![Image of LED](assets/img/led.png "LED: Anode and Cathode")
 
-## Part 6: Reviewing our circuit
+## Task 6: Reviewing our circuit
 So, you may be asking yourself at this point: *"Is that the proper way to connect that LED?"*. This is an excellent question. To find the answer:
 - Navigate to the [Arduino tutorial page for Blink](https://www.arduino.cc/en/Tutorial/Blink) (which is provided in the comments of the Blink code)
 - Note the hardware required
@@ -169,7 +169,7 @@ Identify all of the 10 Kohm resistors in your kit
 Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
 - ***Hint:*** Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
 
-## Part 7: Building a proper circuit
+## Task 7: Building a proper circuit
 Now that you've properly identified the resistor you need for this circuit, how are you going to connect the pieces?
 - You could attempt to twist the wires together, but you might break something and it won't be very reliable
 - You could solder the pieces together, but we're just experimenting here. 
@@ -192,4 +192,4 @@ Create the proper blink circuit using:
 When you've succeeded, save your sketch to your local working folder with an appropriate name.
 
 ---  
-**All done?** Let's move on to your [second lesson](mapping-our-data), where we will map our newly-collected data!
+**All done?** Let's move on to your [second lesson](part-two), where we will create some circuits with sensors!
