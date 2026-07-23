@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mapping our data
+title: Connecting sensors
 nav_order: 4
 ---
 
