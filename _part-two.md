@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Connecting sensors
+title: Connecting Sensors
 nav_order: 4
 ---
 
-**FIND THIS WEBSITE AT [bit.ly/shad-mapping](https://bit.ly/shad-mapping)**
+**FIND THIS WEBSITE AT [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station)**
 
 *Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page and completed [Lesson 1: Intro to GIS](intro-to-GIS).*
 
