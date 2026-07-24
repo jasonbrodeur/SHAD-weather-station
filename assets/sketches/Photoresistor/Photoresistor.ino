@@ -6,11 +6,11 @@
   Also prints the results to the Serial Monitor.
 
   The circuit:
-  # Photoresistor:
-  - one leg of photoresistor connected to analog pin 0. Same leg is connected to +5V
+  1. Photoresistor:
+  - one leg of photoresistor connected to analog pin 0 (A0). Same leg is connected to +5V
   - other leg of the photoresistor is connected to a 10 kOhm resistor
   - Other end of the 10 kOhm resistor is connected to GND (ground)
-  # LED:
+  2. LED:
   - One leg of the LED is connected to Arduino digital pin 9
   - The other leg is connected to a 330 ohm resistor
   - Other end of the 330 Ohm resistor is connected to GND (ground)
@@ -22,7 +22,7 @@
 
   This example code is in the public domain.
 Wiring example: 
-https://docs.arduino.cc/built-in-examples/analog/AnalogInput/
+https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/img/photoresistor-wiring.png
 */
 
 // These constants won't change. They're used to give names to the pins used:
@@ -51,7 +51,7 @@ void loop() {
   Serial.print("\t LED output intensity = ");
   Serial.println(outputValue);
 
-  // wait 2 milliseconds before the next loop for the analog-to-digital
+  // wait 50 milliseconds before the next loop for the analog-to-digital
   // converter to settle after the last reading:
   delay(50);
 }

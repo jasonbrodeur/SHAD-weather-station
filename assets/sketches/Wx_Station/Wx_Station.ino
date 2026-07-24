@@ -6,20 +6,22 @@
   Also prints the results to the Serial Monitor.
 
   The circuit:
-  1. Potentiometer
-  - one leg of photoresistor connected to analog pin 0. Same leg is connected to +5V
+  1. Photoresistor:
+  - one leg of photoresistor connected to analog pin 0 (A0). Same leg is connected to +5V
   - other leg of the photoresistor is connected to a 10 kOhm resistor
-  - Other end of the 10 kOhm resistor is connected to ground
-  2. Thermistor
-  - one leg of thermistor connected to analog pin 1. Same leg is connected to +5V
+  - Other end of the 10 kOhm resistor is connected to GND (ground)
+  2. LED:
+  - One leg of the LED is connected to Arduino digital pin 9
+  - The other leg is connected to a 330 ohm resistor
+  - Other end of the 330 Ohm resistor is connected to GND (ground)
+  3. Thermistor
+  - One leg of thermistor connected to analog pin 1 (A1). Same leg is connected to +5V
   - other leg of the photoresistor is connected to a 10 kOhm resistor
-  - Other end of the 10 kOhm resistor is connected to ground
-  3. LED 
-  - Uses onboard LED (Pin 13)
+  - Other end of the 10 kOhm resistor is connected to GND (ground)
   4. DHT11
   - Left leg connects to 5V
   - Middle leg connects to Digital Pin 2
-  - Right leg connects to Gnd
+  - Right leg connects to GND (Ground)
 
   created 29 Dec. 2008
   modified 9 Apr 2012
@@ -40,7 +42,7 @@ https://docs.arduino.cc/built-in-examples/analog/AnalogInput/
 // These constants won't change. They're used to give names to the pins used:
 const int PrPin = A0;  // Analog input pin that the photoresistor is attached to
 const int ThPin = 1;  // Analog input pin that the thermistor is attached to
-const int analogOutPin = 13;  // Analog output pin that the LED is attached to
+const int analogOutPin = 9;  // Analog output pin that the LED is attached to
 #define DHTPIN 2     // Digital pin connected to the DHT sensor
 #define DHTTYPE DHT11   // DHT 11
 //#define DHTTYPE DHT22   // DHT 22  (AM2302), AM2321
@@ -66,21 +68,6 @@ float Thermistor(int RawADC) {
   Temp = 1 / (0.001129148 + (0.000234125 * Temp) + (0.0000000876741 * Temp * Temp * Temp));
   Temp = Temp - 273.15;  // Convert Kelvin to Celsius                      
 
-  // BEGIN- Remove these lines for the function not to display anything
-  //Serial.print("ADC: ");
-  //Serial.print(RawADC);
-  //Serial.print("/1024");                           // Print out RAW ADC Number
-  //Serial.print(", vcc: ");
-  //Serial.print(vcc,2);
-
-  //Serial.print(", pad: ");
-  //Serial.print(pad/1000,3);
-  //Serial.print(" Kohms, Volts: ");
-  //Serial.print(((RawADC*vcc)/1024.0),3);  
-  //Serial.print(", Resistance: ");
-  //Serial.print(Resistance);
-  //Serial.print(" ohms, ");
-  // END- Remove these lines for the function not to display anything
 
   // Uncomment this line for the function to return Fahrenheit instead.
   //temp = (Temp * 9.0)/ 5.0 + 32.0;                  // Convert to Fahrenheit
@@ -136,7 +123,7 @@ void loop() {
   Serial.print(" | DHT humidex (dec C)= ");
   Serial.println(dht_hi);
 
-  // wait 100 milliseconds before the next loop for the analog-to-digital
+  // wait 2000 milliseconds (2 seconds) before the next loop for the analog-to-digital
   // converter to settle after the last reading:
   delay(2000);
 }
