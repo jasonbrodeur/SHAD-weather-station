@@ -6,10 +6,14 @@
   Also prints the results to the Serial Monitor.
 
   The circuit:
+  # Photoresistor:
   - one leg of photoresistor connected to analog pin 0. Same leg is connected to +5V
   - other leg of the photoresistor is connected to a 10 kOhm resistor
-  - Other end of the 10 kOhm resistor is connected to ground
-  - Uses onboard LED (Pin 13)
+  - Other end of the 10 kOhm resistor is connected to GND (ground)
+  # LED:
+  - One leg of the LED is connected to Arduino digital pin 9
+  - The other leg is connected to a 330 ohm resistor
+  - Other end of the 330 Ohm resistor is connected to GND (ground)
 
   created 29 Dec. 2008
   modified 9 Apr 2012
@@ -23,10 +27,10 @@ https://docs.arduino.cc/built-in-examples/analog/AnalogInput/
 
 // These constants won't change. They're used to give names to the pins used:
 const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
-const int analogOutPin = 13;  // Analog output pin that the LED is attached to
+const int analogOutPin = 9;  // Analog output pin that the LED is attached to
 
-int sensorValue = 0;  // value read from the pot
-int outputValue = 0;  // value output to the PWM (analog out)
+int sensorValue = 0;  // value read from the photoresistor
+int outputValue = 0;  // value output to the LED
 
 void setup() {
   // initialize serial communications at 9600 bps:
