@@ -4,6 +4,8 @@ title: Preparation
 nav_order: 2
 ---
 
+**FIND THIS WEBSITE AT [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station)**
+
 # Preparation
 In this workshop, we will build a weather station using simple sensors, the open source [Arduino UNO microcontroller](https://store.arduino.cc/products/arduino-uno-rev3), and the [Ardiuno IDE](https://www.arduino.cc/en/software/) to program it.  
 
