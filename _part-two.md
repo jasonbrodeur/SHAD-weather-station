@@ -22,7 +22,7 @@ Follow the wiring diagram below to build the circuit.
 <img src="assets/img/photoresistor-wiring.png" alt="Photoresistor Wiring diagram" width="600">  
 
 ### 1.2 Upload the code
-Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Photoresistor.ino).
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Photoresistor.ino?download=).
 
 ```
 /*
@@ -95,7 +95,7 @@ Follow the wiring diagram below to build the circuit.
 <img src="assets/img/photoresistor-thermistor-wiring.png" alt="Photoresistor and Thermistor Wiring diagram" width="600">  
 
 ### 2.2 Upload the code
-Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Photoresistor_Thermistor.ino).
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Photoresistor_Thermistor.ino?download=).
 
 ```
 /*
@@ -200,10 +200,10 @@ In this exercise, you will add the final piece to your weather station: A DHT11 
 
 ### 3.1 Connect the circuits
 Follow the wiring diagram below to build the circuit.
-<img src="assets/img/wx-station-wiring.png.png" alt="Photoresistor, Thermistor, DHT11 Wiring diagram" width="600">  
+<img src="assets/img/wx-station-wiring.png" alt="Photoresistor, Thermistor, DHT11 Wiring diagram" width="600">  
 
-### 2.2 Upload the code
-Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Wx_Station.ino).
+### 3.2 Upload the code
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://raw.githubusercontent.com/jasonbrodeur/SHAD-weather-station/refs/heads/main/assets/sketches/Wx_Station.ino).
 
 ```
 /*
