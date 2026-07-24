@@ -167,11 +167,11 @@ Use [resisto.rs](http://resisto.rs/) to assess your answer (enter ```10K``` into
 
 #### Question 2
 Identify all of the 10 Kohm resistors in your kit
-- ***Hint***: there may be a mix of 4- and 5-band codes used
+- ***Hint***: Your kit has resistors with 5-band codes, but Jay may have brought some 4-band resistors, so be aware! 
 
 #### Question 3
-Use the colour code chart to identify the resistance of the other resistors in your kit (hint: the rest all have the same resistance and all use a 4-band colour code).
-- ***Hint:*** Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
+Use the colour code chart to identify the resistance of the other resistors in your kit.
+- ***Hint 2:*** Use a resistor colour code calculator like [this](https://www.digikey.ca/en/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band) to assess your answer. These kind of calculators are useful when you have a resistor in hand (i.e. you know the colour code), and need to know its resistance.
 
 ## Task 7: Building a proper circuit
 Now that you've properly identified the resistor you need for this circuit, how are you going to connect the pieces?
@@ -187,13 +187,18 @@ The solderless breadboard allows you to create circuits quickly without the need
 
 Note in the example above that connections run horizontally across rows of 5 on the inner part of the breadboard, while connections run vertically down the outside columns. 
 
-### 7.1 Build a proper circuit
+### 7.1 Build the proper circuit
 Create the proper blink circuit using: 
 - The solderless breadboard
 - The LED from the first circuit
 - An appropriate resistor
 - Jumper cables to connect the breadboard to the Arduino pins.
 When you've succeeded, save your sketch to your local working folder with an appropriate name.
+
+## Task 8: If you finish early
+Time to have some fun!
+- See if you can make the Arduino sing: Check out the [ToneMelody](https://docs.arduino.cc/built-in-examples/digital/toneMelody/) example (you can load it in the Arduino IDE at `File > Examples > 02.Digital ? toneMelody`)
+- Jay will bring in some other sensors and actuators for you to experiment with.
 
 ---  
 **All done?** Let's move on to your [second lesson](part-two), where we will create some circuits with sensors!
