@@ -7,7 +7,7 @@ nav_order: 1
 
 # Welcome to your SHAD "Build your own weather station" workshop
 
-SHORTLINK TO THIS SITE: [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station).
+**FIND THIS WEBSITE AT [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station)**
 
 In today's workshop, you will work in small groups to construct simple circuits into a working weather station. You will learn how to use microcontrollers and connect them to electronic components to measure atmospheric variables (temperature, humidity, light intensity, etc.), output them to your computer screen, and trigger other actions based on their values. You'll also learn some of the basics of temperature measurement, and you'll get a chance to put your building skills to the test by creating an enclosure for your weather station prototype.  
 
