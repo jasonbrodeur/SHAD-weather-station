@@ -6,7 +6,7 @@ nav_order: 4
 
 **FIND THIS WEBSITE AT [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station)**
 
-# Lesson 2: Connecting sensors 
+# Lesson 2: Connecting sensors | Building our weather station
 In this lesson, you will build on the skills gained during [lesson 1](part-one), to connect some sensors to the Arduino. We will add sensors one at a time; by the end, your will have your weather station constructedand working. We will add sensors in this order: 
 1. Photoresistor: light-sensitive resistor, used to measure light intensity
 2. THermistor: temperature-sensitive resistor, used to measure temperature
@@ -23,7 +23,7 @@ Follow the wiring diagram below to build the circuit.
 <img src="assets/img/photoresistor-wiring.png" alt="Photoresistor Wiring diagram" width="600">  
 
 ### 1.2 Upload the code
-Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://jasonbrodeur.github.io/SHAD-weather-station/assets/sketches/Photoresistor.ino).
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://jasonbrodeur.github.io/SHAD-weather-station/assets/sketches/Photoresistor.ino) (if you are prompted to create a folder for the sketch, cick OK).  
 
 ```
 /*
@@ -100,7 +100,7 @@ Follow the wiring diagram below to build the circuit.
 <img src="assets/img/photoresistor-thermistor-wiring.png" alt="Photoresistor and Thermistor Wiring diagram" width="600">  
 
 ### 2.2 Upload the code
-Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://jasonbrodeur.github.io/SHAD-weather-station/assets/sketches/Photoresistor_Thermistor.ino).
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://jasonbrodeur.github.io/SHAD-weather-station/assets/sketches/Photoresistor_Thermistor.ino) (if you are prompted to create a folder for the sketch, cick OK).  
 
 ```
 /*
@@ -218,7 +218,7 @@ Follow the wiring diagram below to build the circuit.
 <img src="assets/img/wx-station-wiring.png" alt="Photoresistor, Thermistor, DHT11 Wiring diagram" width="600">  
 
 ### 3.2 Upload the code
-Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://jasonbrodeur.github.io/SHAD-weather-station/assets/sketches/Wx_Station.ino).
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://jasonbrodeur.github.io/SHAD-weather-station/assets/sketches/Wx_Station.ino) (if you are prompted to create a folder for the sketch, cick OK).  
 
 ```
 /*
