@@ -1,5 +1,5 @@
 /*
-  Photoresistor -- modified from Analog input, analog output, serial output
+  Wx_Station -- modified from Analog input, analog output, serial output
 
   Reads an analog input pin, maps the result to a range from 0 to 255 and uses
   the result to set the pulse width modulation (PWM) of an output pin.
