@@ -11,6 +11,9 @@ nav_order: 3
 # Lesson 1: Learning simple circuits
 In this first lesson, you will learn how to connect your Arduino, interact with and program it via sketches on the Arduino IDE, and build some simple circuits using an LED. 
 
+## Slides
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSPUC_Mnnr0pDVCfybl-LGw7oXRn8mPPqP9iB4xs2C5j4a9szkbIz6_lWrYYzR7aJVpNuqNFEabFEOq/pubembed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
 ## Task 1: Connect your Arduino to your laptop
 Now that you've unpacked your kit, it's time to plug in your Arduino and begin using it.
 
