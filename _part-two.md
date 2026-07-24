@@ -6,11 +6,196 @@ nav_order: 4
 
 **FIND THIS WEBSITE AT [bit.ly/shad-weather-station](https://bit.ly/shad-weather-station)**
 
-*Before starting this section, make sure you've completed all tasks in the [Preparation](preparation) page and completed [Lesson 1: Intro to GIS](intro-to-GIS).*
-
 # Lesson 2: Connecting sensors 
-In this lesson, you will build on the skills gained during [lesson 1](part-one), to connect some sensors to the Arduino.
+In this lesson, you will build on the skills gained during [lesson 1](part-one), to connect some sensors to the Arduino. We will add sensors one at a time; by the end, your will have your weather station constructedand working. We will add sensors in this order: 
+1. Photoresistor: light-sensitive resistor, used to measure light intensity
+2. THermistor: temperature-sensitive resistor, used to measure temperature
+3. DHT11 Sensor: A combined temperature + humidity sensor.
 
+## Task 1: Connecting a Photoresistor
+In this exercise, you will connect the photoresistor to your Arduino using the breadboard to measure light intensity. Your uploaded code will measure current through the photoresitor to estimate light intensity (higher current = greater light intensity). 
+
+Connect the components using the wiring diagram below and copy the code into a new sketch and upload it to the Arduino. Once uploaded, experiment with differing amount of light on the sensor (cover it with your hand, shine your phone's flashlight on it) to see what happens.
+
+### 1.1 Connect the circuits
+Follow the wiring diagram below to build the circuit.
+<img src="assets/img/photoresistor-wiring.png" alt="Photoresistor Wiring diagram" width="600">  
+
+### 1.2 Upload the code
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Photoresistor.ino).
+
+```
+/*
+  Photoresistor -- modified from Analog input, analog output, serial output
+
+  Reads an analog input pin, maps the result to a range from 0 to 255 and uses
+  the result to set the pulse width modulation (PWM) of an output pin.
+  Also prints the results to the Serial Monitor.
+
+  The circuit:
+  1. Photoresistor:
+  - one leg of photoresistor connected to analog pin 0 (A0). Same leg is connected to +5V
+  - other leg of the photoresistor is connected to a 10 kOhm resistor
+  - Other end of the 10 kOhm resistor is connected to GND (ground)
+  2. LED:
+  - One leg of the LED is connected to Arduino digital pin 9
+  - The other leg is connected to a 330 ohm resistor
+  - Other end of the 330 Ohm resistor is connected to GND (ground)
+
+  created 29 Dec. 2008
+  modified 9 Apr 2012
+  by Tom Igoe
+  modified July 2026 by Jay Brodeur
+
+  This example code is in the public domain.
+Wiring example: 
+https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/img/photoresistor-wiring.png
+*/
+
+// These constants won't change. They're used to give names to the pins used:
+const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+const int analogOutPin = 9;  // Analog output pin that the LED is attached to
+
+int sensorValue = 0;  // value read from the photoresistor
+int outputValue = 0;  // value output to the LED
+
+void setup() {
+  // initialize serial communications at 9600 bps:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // read the analog in value:
+  sensorValue = analogRead(analogInPin);
+  // map it to the range of the analog out:
+  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  // change the analog out value:
+  analogWrite(analogOutPin, outputValue);
+
+  // print the results to the Serial Monitor:
+  Serial.print("photoresistor = ");
+  Serial.print(sensorValue);
+  Serial.print("\t LED output intensity = ");
+  Serial.println(outputValue);
+
+  // wait 50 milliseconds before the next loop for the analog-to-digital
+  // converter to settle after the last reading:
+  delay(50);
+}
+```
+
+### 1.3 Experiment
+Once your program and circuit is working, experiment with differing amount of light on the sensor (cover it with your hand, shine your phone's flashlight on it) to see what happens. How quickly does the sensor respond to changes? What is its range?
+
+### Task 2: Add a Thermistor to the circuit
+In this exercise, you will add to your photoresistor circuit by including a thermistor to measure temperature. Your uploaded code will measure current through the photoresitor to estimate light intensity (higher current = greater light intensity), and temperature through the thermistor.
+
+### 2.1 Connect the circuits
+Follow the wiring diagram below to build the circuit.
+<img src="assets/img/photoresistor-thermistor-wiring.png" alt="Photoresistor and Thermistor Wiring diagram" width="600">  
+
+### 2.2 Upload the code
+Copy and paste the code below into a blank sketch (replace anything already existing in the sketch), and then upload it to your Arduino. Alternatively, you can download the full sketch [here](https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/sketches/Photoresistor_Thermistor.ino).
+
+```
+/*
+  Photoresistor_Thermistor -- modified from Analog input, analog output, serial output
+
+  Reads an analog input pin, maps the result to a range from 0 to 255 and uses
+  the result to set the pulse width modulation (PWM) of an output pin.
+  Also prints the results to the Serial Monitor.
+
+  The circuit:
+  1. Photoresistor:
+  - one leg of photoresistor connected to analog pin 0 (A0). Same leg is connected to +5V
+  - other leg of the photoresistor is connected to a 10 kOhm resistor
+  - Other end of the 10 kOhm resistor is connected to GND (ground)
+  2. LED:
+  - One leg of the LED is connected to Arduino digital pin 9
+  - The other leg is connected to a 330 ohm resistor
+  - Other end of the 330 Ohm resistor is connected to GND (ground)
+  3. Thermistor
+  - One leg of thermistor connected to analog pin 1 (A1). Same leg is connected to +5V
+  - other leg of the photoresistor is connected to a 10 kOhm resistor
+  - Other end of the 10 kOhm resistor is connected to GND (ground)
+
+  created 29 Dec. 2008
+  modified 9 Apr 2012
+  by Tom Igoe
+  modified July 2026 by Jay Brodeur
+
+  This example code is in the public domain.
+Wiring example: 
+https://github.com/jasonbrodeur/SHAD-weather-station/blob/main/assets/img/photoresistor-thermistor-wiring.png
+*/
+
+#include <math.h> // include the math library
+
+// These constants won't change. They're used to give names to the pins used:
+const int PrPin = A0;  // Analog input pin that the photoresistor is attached to
+const int ThPin = 1;  // Analog input pin that the thermistor is attached to
+const int analogOutPin = 9;  // Analog output pin that the LED is attached to
+
+// intermediate variables (for thermistor temperature calculation): 
+float vcc = 4.91;                       // only used for display purposes, if used set to the measured Vcc.
+float pad = 9850;                       // balance/pad resistor value, set this to the measured resistance of your pad resistor
+float thermr = 10000;                   // thermistor nominal resistance
+
+// create variables for output:
+int sensorValue_PR = 0;  // value read from the photoresistor
+float temp = 0;  // temperature
+int outputValue = 0;  // value output to the PWM (analog out)
+
+// A function to measure and calculate temperature =====
+float Thermistor(int RawADC) {
+  long Resistance;  
+  float Temp;  // Dual-Purpose variable to save space.
+
+  Resistance=pad*((1024.0 / RawADC) - 1);
+  Temp = log(Resistance); // Saving the Log(resistance) so not to calculate  it 4 times later
+  Temp = 1 / (0.001129148 + (0.000234125 * Temp) + (0.0000000876741 * Temp * Temp * Temp));
+  Temp = Temp - 273.15;  // Convert Kelvin to Celsius                      
+
+  
+  // Uncomment this line for the function to return Fahrenheit instead.
+  //temp = (Temp * 9.0)/ 5.0 + 32.0;                  // Convert to Fahrenheit
+  return Temp;                                      // Return the Temperature
+}
+// =====================================================
+
+
+void setup() {
+  // initialize serial communications at 9600 bps:
+  Serial.begin(9600);
+}
+
+void loop() {
+  // %%% Photoresistor code 
+  // read the analog in value:
+  sensorValue_PR = analogRead(PrPin);
+  // map it to the range of the analog out:
+  outputValue = map(sensorValue_PR, 0, 1023, 0, 255);
+  // change the analog out value:
+  analogWrite(analogOutPin, outputValue);
+
+  // %%% Read from Thermistor
+  temp=Thermistor(analogRead(ThPin));       // read ADC and  convert it to Celsius
+
+  // print the results to the Serial Monitor:
+  Serial.print("photoresistor = ");
+  Serial.print(sensorValue_PR);
+  //Serial.print("\t LED output intensity = ");
+  //Serial.print(outputValue);
+  Serial.print("\t Thermistor temperature (deg C)= ");
+  Serial.println(temp);
+
+  // wait 100 milliseconds before the next loop for the analog-to-digital
+  // converter to settle after the last reading:
+  delay(100);
+}
+```
+
+## Task 2: Connecting the DHT Temperature & Humidity Sensor
 - This part requires that you've installed the Adafruit DHT Library, as outlined on the [preparation](preparation) page. 
 - From the top menu on the Arduino IDE, go to `File>Examples>DHT Sensor Library` and open the **DHTtester** sketch.
 - VCC: Connect to 3.3V or 5V on your MCU (based on your sensor's specification).
