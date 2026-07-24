@@ -88,10 +88,10 @@ void loop() {
 - Open the Serial Monitor (icon on top-right or from the top menu: `Tools > Serial Monitor`. Confirm that the program is outputting values and they seem as expected (photoresistor values should range between 0 and 1023; LED output between 0 and 255).
 - Experiment with differing amounts of light on the sensor (cover it with your hand, shine your phone's flashlight on it) to see what happens. Do the values change as expected? If so, does it respond as expected? How quickly does the sensor respond to changes?
 
-## 1.4 Save your sketch
+### 1.4 Save your sketch
 - Save your sketch to your laptop. Name it appropriately. 
 
-### Task 2: Add a Thermistor to the circuit
+## Task 2: Add a Thermistor to the circuit
 In this exercise, you will add to your photoresistor circuit by including a thermistor to measure temperature. Your uploaded code will measure current through the photoresitor to estimate light intensity (higher current = greater light intensity), and temperature through the thermistor.
 
 ### 2.1 Connect the circuits
@@ -204,11 +204,11 @@ void loop() {
 - Open the Serial Monitor (icon on top-right or from the top menu: `Tools > Serial Monitor`. Confirm that the program is outputting values and they seem as expected (photoresistor and thermistor).
 - Change the temperature of the sensor (put your finger on it, breath on it, place a cold piece of metal on it) to see what happens. Do the values change as expected? If so, does it respond as expected? How quickly does the sensor respond to changes?
 
-## 2.4 Save your sketch
+### 2.4 Save your sketch
 - Save your sketch to your laptop. Name it appropriately.
 
 
-### Task 3: Add a DHT11 sensor to complete the weather station
+## Task 3: Add a DHT11 sensor to complete the weather station
 **NOTE**: This part requires that you've installed the Adafruit DHT Library, as outlined on the [preparation](preparation) page.  
 In this exercise, you will add the final piece to your weather station: A DHT11 temperature and humidity sensor. Your uploaded code will measure light intensity with the photoresitor, temperature with the thermistorm, and temperature and humidity with the DHT11. 
 
@@ -355,7 +355,7 @@ void loop() {
 - Open the Serial Monitor (icon on top-right or from the top menu: `Tools > Serial Monitor`. Confirm that the program is outputting values and they seem as expected (photoresistor and thermistor).
 - Change the temperature and humidity of the DHT11 sensor (put it in your hand, breath on it, etc.) to see what happens. Do the values change as expected? If so, does it respond as expected? How quickly does the sensor respond to changes?
 
-## 3.4 Save your sketch
+### 3.4 Save your sketch
 - Save your sketch to your laptop. Name it appropriately. 
 
 ## Task 4: If you finish early
