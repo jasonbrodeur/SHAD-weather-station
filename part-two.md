@@ -19,6 +19,7 @@ Connect the components using the wiring diagram below and copy the code into a n
 
 ### 1.1 Connect the circuits
 Follow the wiring diagram below to build the circuit.
+
 <img src="assets/img/photoresistor-wiring.png" alt="Photoresistor Wiring diagram" width="600">  
 
 ### 1.2 Upload the code
@@ -95,6 +96,7 @@ In this exercise, you will add to your photoresistor circuit by including a ther
 
 ### 2.1 Connect the circuits
 Follow the wiring diagram below to build the circuit.
+
 <img src="assets/img/photoresistor-thermistor-wiring.png" alt="Photoresistor and Thermistor Wiring diagram" width="600">  
 
 ### 2.2 Upload the code
@@ -212,6 +214,7 @@ In this exercise, you will add the final piece to your weather station: A DHT11 
 
 ### 3.1 Connect the circuits
 Follow the wiring diagram below to build the circuit.
+
 <img src="assets/img/wx-station-wiring.png" alt="Photoresistor, Thermistor, DHT11 Wiring diagram" width="600">  
 
 ### 3.2 Upload the code
